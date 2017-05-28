@@ -1,9 +1,21 @@
-<div class="row">
-    <div class="col-sm-12">
-        <nav>
-            <a routerLink="/myspeech">View My Speech</a>
-            <a routerLink="/new">Submit New Speech</a>
-            <a routerLink="/search">All Speeches</a>
-        </nav>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <ul class="nav navbar-nav">
+            <li [routerLinkActive]="['active']" routerLink="/myspeech"><a>
+                <span class="fa-stack">
+                    <i class="fa fa-comment-o fa-stack-2x"></i>
+                    <i class="fa fa-user fa-stack-1x"></i>
+                </span> My Speech</a></li>
+            <li [routerLinkActive]="['active']" routerLink="/new"><a>
+                <span class="fa-stack">
+                    <i class="fa fa-comment-o fa-stack-2x"></i>
+                    <i class="fa fa-floppy-o fa-stack-1x"></i>
+                </span> New Speech</a></li>
+            <li [routerLinkActive]="['active']" routerLink="/search"><a>
+                <span class="fa-stack">
+                    <i class="fa fa-comment-o fa-stack-2x"></i>
+                    <i class="fa fa-list-ul fa-stack-1x"></i>
+                </span> All Speeches</a></li>
+        </ul>
     </div>
-</div>
+</nav>

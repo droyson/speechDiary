@@ -1,42 +1,42 @@
-<div class="col-xs-12">
-    <h5 *ngIf="type!=='new'">{{selectedSpeech.name}}</h5>
-    <div class="col-xs-3" *ngIf="type==='new'">
-        <input type="text" class="col-xs-12" [(ngModel)]="selectedSpeech.name" placeholder="Enter title for new speech">
+<div class="col-xs-12 form-group nopadding">
+    <h5 *ngIf="type!=='new'" class="text-info"><b>{{selectedSpeech.name}}</b></h5>
+    <div class="col-xs-12 col-sm-6 col-md-3 nopadding" *ngIf="type==='new'">
+        <input type="text" class="col-xs-12 form-control" [(ngModel)]="selectedSpeech.name" placeholder="Enter title for new speech">
     </div>
 </div>
-<div class="col-xs-12">
-    <textarea class="col-xs-6" [(ngModel)]="selectedSpeech.content" [disabled]="type==='view'"></textarea>
+<div class="col-xs-12 nopadding">
+        <textarea class="form-control" [(ngModel)]="selectedSpeech.content" [disabled]="type==='view'" placeholder="Content goes here..."></textarea>
 </div>
-<div class="col-xs-12">
-    <div class="col-xs-3">
+<div class="col-xs-12 nopadding mt15">
+    <div class="col-xs-9 mt8 col-sm-6 col-md-3">
         <label class="col-xs-12">Author</label>
-        <input type="text" class="col-xs-12" [(ngModel)]="selectedSpeech.author" [disabled]="type==='view'">
+        <input type="text" class="col-xs-12 form-control" [(ngModel)]="selectedSpeech.author" [disabled]="type==='view'">
     </div>
-    <div class="col-xs-3">
+    <div class="col-xs-9 mt8 col-sm-6 col-md-3">
         <label class="col-xs-12">Keywords</label>
-        <input type="text" class="col-xs-12" [(ngModel)]="selectedSpeech.keywords" [disabled]="type==='view'">
+        <input type="text" class="col-xs-12 form-control" [(ngModel)]="selectedSpeech.keywords" [disabled]="type==='view'">
     </div>
-    <div class="col-xs-3">
-        <label class="col-xs-12">Creation Date</label>
-        <input type="date" class="col-sm-12" [ngModel]="selectedSpeech.date | date: 'yyyy-MM-dd'" (ngModelChange)="selectedSpeech.date = $event"  [disabled]="type==='view'">
+    <div class="col-xs-9 mt8 col-sm-6 col-md-3">
+        <label class="col-xs-12">Speech Date</label>
+        <input type="date" class="col-sm-12 form-control" [ngModel]="selectedSpeech.date | date: 'yyyy-MM-dd'" (ngModelChange)="selectedSpeech.date = $event"  [disabled]="type==='view'">
     </div>
-    <div class="col-xs-3" *ngIf="selectedSpeech.sharedWith">
+    <div class="col-xs-9 mt8 col-sm-6 col-md-3" *ngIf="selectedSpeech.sharedWith">
         <label class="col-xs-12">Shared With</label>
         <div class="col-xs-12">{{selectedSpeech.sharedWith}}</div>
     </div>
 </div>
-<div class="col-xs-12" *ngIf="type!=='view'">
-    <div class="col-xs-4">
-        <button class="btn btn-default" (click)="deleteSpeech()" *ngIf="type==='edit'">Delete</button>
-        <button class="btn btn-default" (click)="resetSpeech()" *ngIf="type==='new'">Reset</button>
-        <button class="btn btn-default" (click)="saveSpeech()" [disabled]="!selectedSpeech.name">Save</button>
-    </div>
-    <div class="col-xs-4">
+<div class="col-xs-12 nopadding" *ngIf="type!=='view'">
+    <div class="col-xs-12 col-sm-6 mt15">
         <div class="input-group">
             <input type="text" class="form-control" placeholder="Share With..." [(ngModel)]="sharedWith">
             <span class="input-group-btn">
-                <button class="btn btn-default" (click)="share()">Share</button>
+                <button class="btn btn-warning" (click)="share()"><i class="fa fa-share fa-lg"></i></button>
             </span>
         </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 mt15">
+        <button class="btn btn-success pull-right ml10" (click)="saveSpeech()" [disabled]="!selectedSpeech.name">Save <i class="fa fa-floppy-o"></i></button>
+        <button class="btn btn-default pull-right" (click)="deleteSpeech()" *ngIf="type==='edit'">Delete <i class="fa fa-trash"></i></button>
+        <button class="btn btn-default pull-right" (click)="resetSpeech()" *ngIf="type==='new'">Reset <i class="fa fa-undo"></i></button>
     </div>
 </div>

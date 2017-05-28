@@ -1,0 +1,31 @@
+textarea{
+    height: 200px !important;
+}
+
+.nopadding{
+    padding: 0px !important;
+}
+
+.nopadleft{
+    padding-left: 0px !important;
+}
+
+.nopadroght{
+    padding-right: 0px !important;
+}
+
+.mt8{
+    margin-top: 8px !important; 
+}
+
+.mt15{
+    margin-top: 15px !important; 
+}
+
+.ml10{
+    margin-left: 10px !important;
+}
+
+.padlr25{
+    padding: 0 25px !important;
+}

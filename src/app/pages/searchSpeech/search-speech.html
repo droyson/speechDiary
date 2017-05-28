@@ -1,5 +1,9 @@
-<h4>Speech List</h4>
+<h4 class="text-center"><span class="fa-stack">
+        <i class="fa fa-comment-o fa-stack-2x"></i>
+        <i class="fa fa-list-ul fa-stack-1x"></i>
+    </span> All Speeches</h4>
 <div class="row" *ngIf="!speech">
+    <div class="col-xs-12 table-responsive padlr25">
     <table class="table table-bordered table-hover">
         <thead>
             <tr>
@@ -18,8 +22,9 @@
             </tr>
         </tbody>
     </table>
+    </div>
 </div>
-<div class="col-xs-9" *ngIf="speech">
-    <button class="btn btn-default" (click)="backToList()">Back</button>
+<div class="col-xs-12 col-sm-9 col-sm-offset-2" *ngIf="speech">
+    <button class="btn btn-default" (click)="backToList()"><span class="glyphicon glyphicon-menu-left"></span> Back</button>
     <speech-detail-view [selectedSpeech]="speech" [type]="'view'"></speech-detail-view>
 </div>

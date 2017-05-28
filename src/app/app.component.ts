@@ -7,7 +7,7 @@ import { SpeechService } from './common/commonSpeech.service';
     selector: 'my-app',
     template: `<div class="row">
                     <div class="col-sm-12">
-                        <h1>Speech Diary</h1>
+                        <h1 class="text-center">Speech Diary</h1>
                     </div>
                 </div>
                 <nav-bar></nav-bar>

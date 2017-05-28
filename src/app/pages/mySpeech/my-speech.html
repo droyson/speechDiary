@@ -1,12 +1,17 @@
-<h4>My Speech</h4>
+<h4 class="text-center"><span class="fa-stack">
+        <i class="fa fa-comment-o fa-stack-2x"></i>
+        <i class="fa fa-user fa-stack-1x"></i>
+    </span> My Speech</h4>
 <div class="row">
     <div class="col-xs-12">
-        <div class="col-xs-3">
-            <div *ngFor="let speech of service.speechData; index as i">
-                <a class="col-xs-12" (click)="selectSpeech(speech, i)" *ngIf="speech.author==='Politico1' || speech.sharedWith.indexOf('Politico1')>-1">{{speech.name}}</a>
+        <div class="col-sm-3 col-xs-12 btn-group-vertical" role="group">
+            <div *ngFor="let speech of service.speechData; index as i" [ngClass]="{'hidden-xs': selectedIndex!==-1}">
+                <button type="button" class="btn btn-default col-xs-12" [ngClass]="{'active': selectedIndex===i}" (click)="selectSpeech(speech, i)" *ngIf="speech.author==='Politico1' || speech.sharedWith.indexOf('Politico1')>-1">
+                    {{speech.name}} <span *ngIf="selectedIndex===i" class="glyphicon glyphicon-triangle-right"></span></button>
             </div>
         </div>
-        <div class="col-xs-9" *ngIf="selectedSpeech">
+        <div class="col-sm-9 col-xs-12" *ngIf="selectedSpeech" [ngClass]="{'hidden-xs': selectedIndex===-1}">
+            <a class="btn btn-default visible-xs-block" (click)="backToList()"><span class="glyphicon glyphicon-menu-left"></span> Back</a>
             <speech-detail-view [selectedSpeech]="selectedSpeech" [type]="'edit'" (deleteEvent)="deleteSpeech()" (saveEvent)="updateSpeech($event)"></speech-detail-view>
         </div>
     </div>
