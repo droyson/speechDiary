@@ -1,7 +1,7 @@
 {
     "name": "speech-diary",
     "version": "0.0.1",
-    "description": "Angular 2 app to save and retrieve speech",
+    "description": "Angular app to save and retrieve speech",
     "author": {
         "name": "Royson"
     },

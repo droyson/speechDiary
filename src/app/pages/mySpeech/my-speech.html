@@ -1,0 +1,13 @@
+<h4>My Speech</h4>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="col-xs-3">
+            <div *ngFor="let speech of service.speechData; index as i">
+                <a class="col-xs-12" (click)="selectSpeech(speech, i)" *ngIf="speech.author==='Politico1' || speech.sharedWith.indexOf('Politico1')>-1">{{speech.name}}</a>
+            </div>
+        </div>
+        <div class="col-xs-9" *ngIf="selectedSpeech">
+            <speech-detail-view [selectedSpeech]="selectedSpeech" [type]="'edit'" (deleteEvent)="deleteSpeech()" (saveEvent)="updateSpeech($event)"></speech-detail-view>
+        </div>
+    </div>
+</div>

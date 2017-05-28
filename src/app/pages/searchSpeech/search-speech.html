@@ -1,0 +1,25 @@
+<h4>Speech List</h4>
+<div class="row" *ngIf="!speech">
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th class="col-xs-3">Speech Title</th>
+                <th class="col-xs-3">Author</th>
+                <th class="col-xs-3">Keywords</th>
+                <th class="col-xs-3">Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let speech of service.speechData" (click)="viewSpeech(speech)">
+                <td class="col-xs-3">{{speech.name}}</td>
+                <td class="col-xs-3">{{speech.author}}</td>
+                <td class="col-xs-3">{{speech.keywords}}</td>
+                <td class="col-xs-3">{{speech.date | date: 'dd-MM-yyyy'}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="col-xs-9" *ngIf="speech">
+    <button class="btn btn-default" (click)="backToList()">Back</button>
+    <speech-detail-view [selectedSpeech]="speech" [type]="'view'"></speech-detail-view>
+</div>

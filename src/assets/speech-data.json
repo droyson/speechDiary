@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Speech 1",
+        "content": "Good Morning, Everyone.\nThis is my first speech.",
+        "keywords": ["first", "introduction"],
+        "author": "Politico1",
+        "date": "Mar 03,2016",
+        "sharedWith": ["Sub1", "Asst1"]
+    },
+    {
+        "name": "Speech 2",
+        "content": "Good Morning, Everyone.\nThis is my first speech demo.\n(Asst1)",
+        "keywords": ["first", "demo"],
+        "author": "Asst1",
+        "date": "Mar 30,2016",
+        "sharedWith": ["Politico1", "Sub1"]
+    },
+    {
+        "name": "Speech 3",
+        "content": "Good Evening, Everyone.\nThis is my first speech for evening.",
+        "keywords": ["second", "evening"],
+        "author": "Politico1",
+        "date": "Apr 01,2016",
+        "sharedWith": ["Sub1", "Asst1"]
+    },
+    {
+        "name": "Speech 1",
+        "content": "Good Evening, Everyone.\nThis is my first speech for evening.\n I'm Politico2",
+        "keywords": ["second", "evening"],
+        "author": "Politico2",
+        "date": "Mar 01,2016",
+        "sharedWith": ["Sub2", "Asst2"]
+    },
+    {
+        "name": "Speech 3",
+        "content": "Hello, Everyone.\nThis is my first speech demo.\n(Sub2)",
+        "keywords": ["second", "evening"],
+        "author": "Sub2",
+        "date": "Apr 01,2016",
+        "sharedWith": ["Politico2", "Asst2"]
+    }
+]
